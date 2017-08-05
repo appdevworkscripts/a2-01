@@ -1,0 +1,119 @@
+<script>
+	var obj={
+		a:'Hello',
+		'b-c':120
+	}
+	var x='b-c'
+	console.log(obj[x])
+	obj.a='Bye';
+	console.log(obj);
+	obj['my-key']=400;
+	console.log(obj);
+	delete obj['b-c'];	
+	console.log(obj);
+	
+	var student={
+		name:'Abc',
+		roll:2,
+		balance:400
+	}
+	
+	console.log(student.name);
+	
+	console.log('a' in student);
+	console.log('roll' in student);
+	
+	
+	// for in loop
+	
+	for(let key in student){
+		console.log(key + ' - ' + student[key]);
+	}
+	
+	var objArray=[
+		{a:1,b:2},
+		{a:3,b:7},
+		{a:4,b:2},
+		{a:7,b:4},
+		{a:2,b:1}
+	];
+	
+	objArray.forEach(function(element){
+		console.log(element.b);
+	});
+	
+	var res=objArray.filter(function(element){
+	
+		return element.a>=3 && element.b <=3;
+	
+	});
+	
+	var mappedArray=objArray.map(function(element){
+		var obj={
+			a:element.a,
+			b:element.b,
+			c:parseInt(Math.random()*100)+1
+		}
+		return obj;
+	});
+	
+	var myObj={
+		a:[1,4,6,7]
+	};
+	//myObj.a.forEach();
+	//myObj['a'].forEach();
+	//myObj.a['forEach']();
+	//myObj['a']['forEach']();
+	
+	var car=function(){
+		return {
+			model:'',
+			price:null
+		}
+	}
+	
+	var c1=car();
+	
+	var c2=car();
+	
+	
+	var Car=function(model,price){
+		this.model=model;
+		this.price=price;
+			
+	}
+	Car.prototype.show=function(){
+		console.log(this.model+' - '+this.price);
+	}	
+	var c3=new Car('Ford',2000);
+	var c4=new Car('Maruti',4000);
+	var c5=new Car('BMW',7000);
+	var c6=new Car('Mercedes',1000);
+	
+	
+	
+	var sayHello=function(name){	
+		console.log('Hello ' + this.a + ' - ' +name);
+	}
+	
+	//sayHello('Pankaj');
+	//sayHello.call(null,'Pankaj');
+	
+	//sayHello('Pankaj');
+	
+	sayHello.call({a:40},'Nadeem')
+	
+	//new Object can only be created using function call but not with call property
+	//c7= Car.call({a:90,b:100},'Abc',5000);
+	
+	class Student{
+		constructor(name,roll){
+			this.name=name;
+			this.roll=roll;
+		}
+		show(){
+			console.log(this.name+'-'+this.roll);
+		}
+	}
+	
+</script>

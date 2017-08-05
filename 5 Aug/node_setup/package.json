@@ -1,0 +1,17 @@
+{
+  "name": "node_setup",
+  "version": "1.0.0",
+  "description": "First NPM Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pankaj",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
